@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="rotatePrompt">
+  <p>Please rotate your device 🔄</p>
+</div>
+
         <div class="navbar">
             <img class="Logo" src="IMG_Logo.png" alt="Logo">
             <a href="index.html">Home</a>
@@ -25,5 +29,23 @@
             </a>
             </div>
         </div>
+        <script>
+function checkOrientation() {
+  const isMobile = window.innerWidth <= 768;
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const prompt = document.getElementById("rotatePrompt");
+
+  if (isMobile && isPortrait) {
+    prompt.style.display = "flex";
+  } else {
+    prompt.style.display = "none";
+  }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+window.addEventListener("load", checkOrientation);
+</script>
+
     </body>
 </html>
