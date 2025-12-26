@@ -28,7 +28,30 @@
             <p style="margin-left: 25%; margin-right: 25%; text-decoration:none; color:rgb(255, 255, 255); font-family: Geom, Arial;">This beautiful Golden Brown Banana Cake will full your stomach and your needs. This recipe shows how to make golden banana cake for you or your friends! Click here to read.</p>
             </a>
             </div>
+          </div>
+          <hr>
+          <h1>Recipies</h1>
+          <input style="padding:20px; border-radius: 20px;" type="text" placeholder="Search recipes..." onkeyup="searchRecipes()">
+            <div class="recipies_scroll">
+        <a href="banana_bread.html">
+        <div class="Recipie">
+            <img src="IMG_2285.jpeg" alt="Banana_Cake">
+            <div class="textinrecipie">
+            <h2 style="font-family: BBH Hegarty, Arial; color:  black; font-size: 25px; text-align: center;">Banana Cake 🍰🍌</h2>
+            <p>Learn to make this decicous golden banana cake with only a few steps! Ideal for your next baking project or for any occasion. It is also very customisable</p>            
         </div>
+        </div>
+        </a>
+        <a href="banana_bread.html">
+        <div style="padding-top:20px;" class="Recipie">
+            <img src="IMG_2285.jpeg" alt="Banana_Cake">
+            <div class="textinrecipie">
+            <h2 style="font-family: BBH Hegarty, Arial; color:  black; font-size: 25px; text-align: center;">Veg Fried Rice</h2>
+            <p>Learn to make this decicous golden banana cake with only a few steps! Ideal for your next baking project or for any occasion. It is also very customisable</p>            
+        </div>
+        </div>
+        </a>
+    </div>
         <script>
 function checkOrientation() {
   const isMobile = window.innerWidth <= 768;
@@ -45,6 +68,22 @@ function checkOrientation() {
 window.addEventListener("resize", checkOrientation);
 window.addEventListener("orientationchange", checkOrientation);
 window.addEventListener("load", checkOrientation);
+</script>
+  <script>
+function searchRecipes() {
+  const input = document.querySelector("input").value.toLowerCase();
+  const recipes = document.querySelectorAll(".Recipie");
+
+  recipes.forEach(card => {
+    const title = card.querySelector("h2").textContent.toLowerCase();
+
+    if (title.includes(input)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
 </script>
 
     </body>
